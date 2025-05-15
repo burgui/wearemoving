@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wearemoving | Moving people, transforming businesses</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    :root {
+      /* Brand palette */
+      --primary: #004c97;   /* blue */
+      --accent:  #c79a00;   /* copper */
+      --neutral: #f7f9fc;   /* soft grey */
+      --dark:    #1e1e1e;
+      --text:    #555;
+      --radius:  14px;
+    }
+
+    /* Base */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Open Sans", Arial, sans-serif; color: var(--text); background: var(--neutral); line-height: 1.65; }
+    h1, h2, h3, h4, h5 { font-family: "Poppins", sans-serif; color: var(--primary); }
+    img   { max-width: 100%; display: block; }
+    a     { color: var(--primary); text-decoration: none; }
+
+    /* Layout helpers */
+    .container { width: 90%; max-width: 1200px; margin-inline: auto; }
+    section    { padding: 4.5rem 0; position: relative; }
+    .split     { display: grid; grid-template-columns: repeat(auto-fit,minmax(320px,1fr)); gap: 3rem; align-items: center; }
+
+    /* Header */
+    header { background: var(--neutral); position: sticky; top: 0; z-index: 20; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    .nav   { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .nav img { height: 42px; }
+    .nav ul  { list-style: none; display: flex; gap: 1.75rem; font-size: .95rem; font-weight: 600; }
+    .nav li  { position: relative; }
+    .nav a::after { content:""; position:absolute; width:0; height:2px; bottom:-4px; left:0; background:var(--accent); transition:.3s; }
+    .nav a:hover::after { width:100%; }
+    @media(max-width:768px){ .nav ul{display:none;} }
+
+    /* Hero */
+    .hero { height: 78vh; display: flex; align-items: center; justify-content: center; text-align: center; background:url('/images/hero-team.jpg') center/cover no-repeat; position: relative; }
+    .hero::before { content:""; position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(2px); }
+    .hero-content { position: relative; color:#fff; max-width: 700px; padding: 0 1rem; }
+    .hero h1 { font-size: 3rem; font-weight:700; margin-bottom: .75rem; }
+    .hero p  { font-size: 1.15rem; }
+    .btn { display:inline-block; margin-top:2rem; background:var(--accent); color:#fff; padding:.9rem 2.5rem; border-radius:50px; font-weight:600; transition:.3s; }
+    .btn:hover { background:#a88000; }
+
+    /* About */
+    .about p { margin-bottom:1.25rem; }
+    .about-img { border-radius: var(--radius); box-shadow:0 6px 18px rgba(0,0,0,.08); overflow:hidden; }
+
+    /* Services */
+    .services header { text-align:center; margin-bottom:3rem; }
+    .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
+    .card  { background:#fff; border-radius: var(--radius); box-shadow:0 4px 14px rgba(0,0,0,.05); transition:transform .35s, box-shadow .35s; overflow:hidden; }
+    .card:hover { transform:translateY(-6px); box-shadow:0 8px 22px rgba(0,0,0,.08); }
+    .card-img { height:180px; background-size:cover; background-position:center; }
+    .card-body{ padding:1.5rem; }
+    .card-body h4 { margin-bottom:.6rem; font-size:1.15rem; }
+
+    /* Extra chips */
+    .chip-cloud { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-top:1.5rem; }
+    .chip { background:var(--accent); color:#fff; padding:.55rem 1rem; border-radius:25px; font-size:.85rem; }
+
+    /* Logos */
+    .logos { display:grid; grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); gap:2.5rem; align-items:center; justify-items:center; filter:grayscale(1) brightness(.75); transition:.3s; }
+    .logos img { max-height:60px; }
+    .logos img:hover { filter:none; }
+
+    /* Team */
+    .team-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:2rem; text-align:center; }
+    .member img { height:160px; width:160px; object-fit:cover; border-radius:50%; margin-bottom:.9rem; box-shadow:0 4px 10px rgba(0,0,0,.07); }
+    .member h5 { font-size:1.05rem; }
+    .member span { font-size:.9rem; color:var(--text); }
+
+    /* Why */
+    .why { background:var(--primary); color:#fff; text-align:center; padding:5rem 1rem; }
+    .why h3 { color:#fff; margin-bottom:1rem; }
+    .why p  { max-width:800px; margin-inline:auto; font-size:1.1rem; }
+
+    /* Contact */
+    .contact { background:#fff; text-align:center; }
+    .contact .icon { color:var(--accent); margin-right:.4rem; }
+    .contact p { margin-bottom:1rem; }
+
+    /* Footer */
+    footer { background:var(--dark); color:#fff; text-align:center; font-size:.85rem; padding:1.5rem 0; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <img src="/images/wearemoving_logo.svg" alt="Wearemoving logo" />
+      <ul>
+        <li><a href="#about">Quiénes somos</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#team">Equipo</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Moving people, transforming businesses</h1>
+      <p>Consultoría boutique en gestión de talento y recursos humanos. Conectamos personas y transformamos negocios.</p>
+      <a href="#contact" class="btn">Contáctanos</a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container split about">
+      <div>
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos una consultora boutique especialista en gestión de personas. Trabajamos de manera personalizada y estratégica para desarrollar, potenciar y alinear el talento con los objetivos del negocio.</p>
+        <p>Convertimos el talento en el motor principal del crecimiento empresarial, ofreciendo soluciones integrales y a medida para cada cliente.</p>
+      </div>
+      <div class="about-img">
+        <img src="/images/about-team.jpg" alt="Equipo Wearemoving" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <header>
+        <h2>Servicios</h2>
+        <p>Nuestras soluciones combinan experiencia, tecnología y cercanía para impulsar a las personas y a los negocios.</p>
+      </header>
+
+      <!-- Core Services cards -->
+      <h3 style="text-align:center;margin-bottom:2rem;">Soluciones Core</h3>
+      <div class="cards">
+        <!-- Talent Acquisition -->
+        <div class="card">
+          <div class="card-img" style="background-image:url('/images/core-talent.jpg');"></div>
+          <div class="card-body">
+            <h4><i class="fa-solid fa-user-plus" style="color:var(--accent); margin-right:.5rem;"></i>Talent Acquisition</h4>
+            <p>Identificamos y atraemos candidatos ideales mediante estrategias de reclutamiento personalizadas y data‑driven.</p>
+          </div>
+        </div>
+        <!-- Diagnósticos -->
+        <div class="card">
+          <div class="card-img" style="background-image:url('/images/core-diagnostico.jpg');"></div>
+          <div class="card-body">
+            <h4><i class="fa-solid fa-magnifying-glass-chart" style="color:var(--accent); margin-right:.5rem;"></i>Diagnósticos Organizacionales</h4>
+            <p>Evaluamos estructura, procesos y cultura para detectar oportunidades y diseñar planes de mejora medibles.</p>
+          </div>
+        </div>
+        <!-- Desarrollo -->
+        <div class="card">
+          <div class="card-img" style="background-image:url('/images/core-desarrollo.jpg');"></div>
+          <div class="card-body">
+            <h4><i class="fa-solid fa-chart-line" style="color:var(--accent); margin-right:.5rem;"></i>Desarrollo Organizacional</h4>
+            <p>Programas a medida que fortalecen competencias, engagement y alineación estratégica del talento.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Complementary services chips -->
+      <h3 style="text-align:center;margin:3.5rem 0 1.5rem;">Servicios Complementarios</h3>
+      <div class="chip-cloud">
+        <span class="chip">Reportes de Sustentabilidad</span>
+        <span class="chip">Comunicación Interna & Cultura</span>
+        <span class="chip">Defensa Estratégica Laboral</span>
+        <span class="chip">Coaching & Liderazgo</span>
+        <span class="chip">Planificación Estratégica</span>
+        <span class="chip">Transformación Digital en RRHH</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Expertise logos -->
+  <section id="expertise" style="background:#fff;">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:2.5rem;">Empresas con las que hemos trabajado</h2>
+      <div class="logos">
+        <img src="/images/logo-nestle.png" alt="Nestlé" />
+        <img src="/images/logo-lvmh.png" alt="LVMH" />
+        <img src="/images/logo-ypf.png"  alt="YPF" />
+        <img src="/images/logo-neom.png" alt="NEOM" />
+        <img src="/images/logo-hennessy.png" alt="Hennessy" />
+        <img src="/images/logo-ibm.png" alt="IBM" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team">
+    <div class="container">
+      <h2 style="text-align:center;margin-bottom:2.5rem;">Equipo de Expertos</h2>
+      <div class="team-grid">
+        <div class="member">
+          <img src="/images/team-juan.jpg" alt="Juan Antonio Manzanares" />
+          <h5>Juan Antonio Manzanares</h5>
+          <span>Co‑Founder / Business Partner</span>
+        </div>
+        <div class="member">
+          <img src="/images/team-maca.jpg" alt="Macarena Tabares" />
+          <h5>Macarena Tabares</h5>
+          <span>Co‑Founder / Sr Talent Acquisition</span>
+        </div>
+        <div class="member">
+          <img src="/images/team-flor.jpg" alt="Florencia Casas" />
+          <h5>Florencia Casas</h5>
+          <span>Sustainability & Strategic Planning</span>
+        </div>
+        <div class="member">
+          <img src="/images/team-rocio.jpg" alt="Rocío Tabares" />
+          <h5>Rocío Tabares</h5>
+          <span>Communications & Sustainability</span>
+        </div>
+        <div class="member">
+          <img src="/images/team-fer.jpg" alt="Fernando Rey Gaido" />
+          <h5>Fernando Rey Gaido</h5>
+          <span>Legal Advisor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why choose us -->
+  <section class="why">
+    <h3>¿Por qué elegir Wearemoving?</h3>
+    <p>Creemos que cada paso cuenta: conectamos personas, transformamos negocios y generamos impacto juntos. Acompañamos a las organizaciones para alcanzar sus objetivos e impulsar su crecimiento sostenible.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 style="margin-bottom:1.5rem;">Contacto</h2>
+      <p>¿Listo para transformar tu organización? Escríbenos y conversemos sobre tus necesidades y objetivos.</p>
+      <p><i class="fa-solid fa-phone icon"></i><a href="tel:+541150218420">+54 9 11 5021‑8420</a> • <a href="tel:+541136830058">+54 9 11 3683‑0058</a></p>
+      <p><i class="fa-solid fa-envelope icon"></i><a href="mailto:info@wearemoving.com.ar">info@wearemoving.com.ar</a></p>
+      <a href="mailto:info@wearemoving.com.ar" class="btn" style="margin-top:1.5rem;">Escríbenos</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Wearemoving. Todos los derechos reservados.
+  </footer>
+</body>
+</html>
