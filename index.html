@@ -1,245 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wearemoving | Talento que impulsa tu crecimiento</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
-<style>
-:root{
-  --primary:#004C97;
-  --accent:#C79A00;
-  --light:#fff;
-  --dark:#1A1A1A;
-  --bg:#F7F9FC;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:"Open Sans",sans-serif;color:var(--dark);background:var(--bg);line-height:1.65}
-h1,h2,h3{font-family:"Poppins",sans-serif}
-a{text-decoration:none;color:inherit}
-.wrapper{max-width:1200px;margin:auto;padding:0 1rem}
-
-/* NAV */
-header{position:sticky;top:0;z-index:1000;background:var(--light);box-shadow:0 2px 6px rgba(0,0,0,.06)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0}
-.logo{font-weight:700;font-size:1.2rem;color:var(--primary)}
-nav ul{display:flex;gap:1.3rem;list-style:none;font-weight:600;font-size:.96rem}
-
-/* HERO */
-.hero{background:url("images/hero.jpg") center/cover no-repeat fixed;color:var(--light);text-align:center;padding:8rem 1rem;position:relative}
-.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
-.hero>*{position:relative;z-index:1}
-.hero h1{font-size:2.6rem;font-weight:700;margin-bottom:.8rem}
-.hero p{font-size:1.15rem;max-width:700px;margin:.6rem auto 1.6rem}
-.btn{display:inline-block;padding:.8rem 2rem;background:var(--accent);color:var(--light);border-radius:4px;font-weight:600;transition:.3s}
-.btn:hover{filter:brightness(1.1)}
-
-/* SECTION GENERIC */
-section{padding:4rem 0}
-.section-title{text-align:center;margin-bottom:2.4rem;font-size:1.9rem;font-weight:700;color:var(--primary)}
-
-/* QUIENES SOMOS */
-.about{text-align:center;max-width:900px;margin:auto;font-size:1.05rem}
-.principles{display:flex;flex-direction:column;gap:.8rem;margin-top:2rem;list-style:none}
-.principles li{display:flex;gap:.6rem;justify-content:center;align-items:flex-start}
-.principles li::before{content:"›";font-weight:700;color:var(--accent);font-size:1.2rem;margin-top:.1rem}
-
-/* GRID + CARDS */
-.grid{display:grid;gap:2rem}
-@media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--light);padding:2rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:.3s}
-.card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
-.card i{font-size:2rem;color:var(--accent);margin-bottom:1rem}
-
-/* Advisory pills */
-.pill{background:var(--light);padding:.9rem 1.2rem;border-radius:25px;box-shadow:0 2px 6px rgba(0,0,0,.05);font-size:.95rem;text-align:center}
-.pill:hover{box-shadow:0 3px 9px rgba(0,0,0,.08)}
-
-/* NEW METHODOLOGY TIMELINE */
-.timeline{display:grid;gap:1.8rem;margin-top:2rem;position:relative}
-.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;background:var(--accent);transform:translateX(-50%)}
-.step{background:var(--light);padding:2rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.05);max-width:500px;position:relative}
-.step:nth-child(even){margin-left:auto}
-.step:nth-child(odd){margin-right:auto}
-.step span{position:absolute;top:50%;transform:translateY(-50%);left:calc(100% + 12px);width:44px;height:44px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-weight:700}
-.step:nth-child(even) span{left:auto;right:calc(100% + 12px)}
-@media(max-width:700px){
-  .timeline::before{display:none}
-  .step,.step:nth-child(even){margin:0 auto}
-  .step span{left:50%;top:-18px;transform:translate(-50%,0)}
-}
-
-/* EQUIPO */
-.team-carousel{display:flex;overflow-x:auto;gap:1.8rem;padding-bottom:.6rem;scroll-snap-type:x mandatory}
-.team-member{flex:0 0 240px;background:var(--light);padding:1.8rem;border-radius:8px;scroll-snap-align:start;box-shadow:0 3px 10px rgba(0,0,0,.05)}
-.avatar{width:80px;height:80px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-size:1.5rem;font-weight:700;margin:0 auto 1rem}
-
-/* FEEDBACK */
-.testi{background:var(--light);padding:1.6rem 1.9rem;border-left:5px solid var(--accent);margin-bottom:2rem;font-style:italic;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
-
-/* FAQ */
-details{background:var(--light);margin-bottom:1.2rem;padding:1.2rem;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-details summary{font-weight:600;cursor:pointer;list-style:none}
-details[open]{box-shadow:0 4px 12px rgba(0,0,0,.07)}
-details p{margin-top:.8rem}
-
-/* FORM */
-form{max-width:620px;margin:auto}
-.field{margin-bottom:1.2rem}
-.field label{display:block;font-weight:600;margin-bottom:.4rem}
-.field input,.field textarea{width:100%;padding:.7rem;border:1px solid #c9c9c9;border-radius:4px;font-size:1rem}
-button[type=submit]{cursor:pointer;border:none}
-
-/* FOOTER */
-footer{background:var(--primary);color:var(--light);text-align:center;padding:2.2rem 1rem;font-size:.9rem;margin-top:4rem}
-footer a{color:var(--accent)}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Wearemoving | Talento estratégico</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#013A6B;
+      --secondary:#E2A933;
+      --bg:#F9FAFC;
+      --text:#333;
+      --shadow:rgba(0,0,0,0.05);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+    body{background:var(--bg);color:var(--text);}
+    header{background:#fff;padding:1rem 5%;box-shadow:0 2px 5px var(--shadow);position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;}
+    header a{color:var(--primary);font-weight:600;text-decoration:none;margin-left:1.5rem;transition:0.3s;}
+    header a:hover{color:var(--secondary);}
+    section{padding:4rem 5%;max-width:1200px;margin:auto;}
+    h1,h2{color:var(--primary);font-weight:700;}
+    .hero{height:85vh;background:url('images/hero.jpg')center/cover fixed;display:flex;justify-content:center;align-items:center;text-align:center;position:relative;}
+    .hero:before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(1,58,107,0.6);}
+    .hero h1{color:#fff;font-size:3rem;position:relative;}
+    .hero p{color:#fff;opacity:0.9;font-size:1.1rem;margin:1rem auto;position:relative;max-width:700px;}
+    .btn{background:var(--secondary);color:#fff;text-decoration:none;padding:0.7rem 2rem;border-radius:5px;font-weight:600;display:inline-block;margin-top:1rem;transition:0.3s;}
+    .btn:hover{background:var(--primary);}
+    .grid{display:grid;gap:2rem;}
+    .cols3{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));}
+    .card{background:#fff;padding:2rem;border-radius:10px;box-shadow:0 5px 15px var(--shadow);transition:transform 0.3s;}
+    .card:hover{transform:translateY(-10px);}
+    .card h3{margin-bottom:1rem;}
+    .method{display:flex;gap:1rem;justify-content:center;align-items:stretch;margin-top:2rem;}
+    .step{background:#fff;flex:1;padding:1.5rem;border-radius:8px;text-align:center;box-shadow:0 3px 10px var(--shadow);position:relative;}
+    .step:after{content:'';position:absolute;top:50%;right:-10px;height:4px;width:20px;background:var(--secondary);}
+    .step:last-child:after{display:none;}
+    .faq{margin-top:2rem;}
+    details{margin-bottom:1rem;padding:1rem;border-radius:8px;background:#fff;box-shadow:0 2px 8px var(--shadow);}
+    summary{font-weight:600;cursor:pointer;}
+    footer{background:var(--primary);color:#fff;text-align:center;padding:2rem 1rem;margin-top:3rem;}
+    input,textarea{width:100%;padding:0.7rem;border-radius:5px;border:1px solid #ccc;margin-top:0.5rem;}
+    button{padding:0.7rem 2rem;background:var(--secondary);border:none;color:#fff;border-radius:5px;cursor:pointer;margin-top:1rem;}
+    button:hover{background:#c4932a;}
+  </style>
 </head>
 <body>
 
-<!-- NAV -->
-<header><div class="wrapper"><nav>
-  <div class="logo">Wearemoving</div>
-  <ul>
-    <li><a href="#quienes">Quiénes Somos</a></li>
-    <li><a href="#soluciones">Soluciones</a></li>
-    <li><a href="#equipo">Equipo</a></li>
-    <li><a href="#feedback">Feedback</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+<header>
+  <div><strong>Wearemoving</strong></div>
+  <nav>
+    <a href="#quienes">Quiénes somos</a>
+    <a href="#soluciones">Soluciones</a>
+    <a href="#metodo">Metodología</a>
+    <a href="#clientes">Clientes</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Talento que impulsa tu crecimiento</h1>
+    <p>Consultora boutique argentina de headhunting y cultura organizacional. Conectamos empresas y personas hacia el éxito sostenible.</p>
+    <a href="#contacto" class="btn">Solicitar asesoría</a>
+  </div>
+</section>
+
+<section id="quienes">
+  <h2>Quiénes somos</h2>
+  <p style="margin-top:1rem;text-align:center;max-width:800px;margin:auto;">Equipo senior, ágil y estratégico. Socios dedicados en cada proyecto, aplicando estándares globales para potenciar talento local.</p>
+  <ul style="text-align:center;margin-top:2rem;list-style:none;">
+    <li>✓ Talento como motor competitivo</li>
+    <li>✓ Cultura que atrae y retiene</li>
+    <li>✓ Confidencialidad y resultados medibles</li>
   </ul>
-</nav></div></header>
+</section>
 
-<!-- HERO -->
-<section class="hero"><div class="wrapper">
-  <h1>Talento que impulsa tu crecimiento</h1>
-  <p>Boutique argentina de headhunting y cultura organizacional. Conectamos, desarrollamos y retenemos a las personas que hacen avanzar tu negocio.</p>
-  <a href="#contacto" class="btn">Solicitar asesoría</a>
-</div></section>
-
-<!-- QUIENES SOMOS -->
-<section id="quienes"><div class="wrapper">
-  <h2 class="section-title">Quiénes Somos</h2>
-  <p class="about">
-    Somos un equipo senior con visión regional y estándar global. Acompañamos organizaciones en expansión con un socio dedicado por proyecto,
-    metodología ágil y métricas de impacto comprobables.
-  </p>
-  <ul class="principles">
-    <li>Talento como motor competitivo</li>
-    <li>Cultura que atrae y retiene</li>
-    <li>Velocidad, confidencialidad y resultados medibles</li>
-  </ul>
-</div></section>
-
-<!-- SOLUCIONES -->
-<section id="soluciones"><div class="wrapper">
-  <h2 class="section-title">Soluciones Core</h2>
-  <div class="grid grid-3">
-    <div class="card"><i class="fa-solid fa-user-tie"></i><h3>Full-Spectrum Talent Search</h3><p>Perfiles C-Level, mandos medios y roles operativos clave. Shortlist ≤ 20 días y permanencia &gt; 92 % al año.</p></div>
-    <div class="card"><i class="fa-solid fa-chart-pie"></i><h3>Organizational Diagnostics</h3><p>Radiografía 360 ° de estructura, procesos y clima. Quick wins y plan a 12 meses alineado a objetivos.</p></div>
-    <div class="card"><i class="fa-solid fa-people-group"></i><h3>Leadership & Culture Development</h3><p>Programas in-company que sincronizan liderazgo, feedback y valores con la estrategia corporativa.</p></div>
+<section id="soluciones">
+  <h2>Soluciones</h2>
+  <div class="grid cols3" style="margin-top:2rem;">
+    <div class="card">
+      <h3>Full-Spectrum Talent Search</h3>
+      <p>Búsqueda integral: Ejecutivos, mandos medios y roles clave. Resultados en menos de 20 días.</p>
+    </div>
+    <div class="card">
+      <h3>Organizational Diagnostics</h3>
+      <p>Diagnóstico 360° con acciones concretas y rápidas victorias alineadas al negocio.</p>
+    </div>
+    <div class="card">
+      <h3>Leadership & Culture</h3>
+      <p>Desarrollo de liderazgo y cultura en programas hechos a medida.</p>
+    </div>
   </div>
+</section>
 
-  <h3 class="section-title" style="margin-top:3.4rem;font-size:1.6rem;">Advisory</h3>
-  <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem;">
-    <div class="pill">Total Rewards & Compensación</div>
-    <div class="pill">Reportes ESG / GRI</div>
-    <div class="pill">Employer Branding & Comunicación Interna</div>
-    <div class="pill">Outplacement Ejecutivo y Masivo</div>
-    <div class="pill">Digital HR & HRIS Selection</div>
+<section id="metodo">
+  <h2>Metodología</h2>
+  <div class="method">
+    <div class="step"><h4>1. Diagnóstico</h4><p>Analizamos la situación inicial.</p></div>
+    <div class="step"><h4>2. Diseño</h4><p>Definimos el plan de acción.</p></div>
+    <div class="step"><h4>3. Ejecución</h4><p>Implementación ágil con seguimiento.</p></div>
+    <div class="step"><h4>4. Medición</h4><p>Evaluamos resultados y ajustamos.</p></div>
   </div>
-</div></section>
+</section>
 
-<!-- METODOLOGÍA -->
-<section style="background:var(--primary);color:var(--light);"><div class="wrapper">
-  <h2 class="section-title" style="color:var(--light);">Metodología</h2>
-  <div class="timeline">
-    <div class="step"><span>1</span><h3>Diagnosticar</h3><p>Entendemos negocio, cultura y urgencia.</p></div>
-    <div class="step"><span>2</span><h3>Diseñar</h3><p>Definimos estrategia y KPIs junto al cliente.</p></div>
-    <div class="step"><span>3</span><h3>Ejecutar</h3><p>Implementación ágil con reportes semanales.</p></div>
-    <div class="step"><span>4</span><h3>Medir</h3><p>Dashboard de impacto y ajustes continuos.</p></div>
+<section id="clientes">
+  <h2>Qué dicen nuestros clientes</h2>
+  <div class="card" style="margin-top:2rem;">
+    <p>"Resolvieron nuestras necesidades estratégicas en tiempo récord."</p>
   </div>
-</div></section>
-
-<!-- EQUIPO -->
-<section id="equipo"><div class="wrapper">
-  <h2 class="section-title">Equipo</h2>
-  <div class="team-carousel">
-    <div class="team-member"><div class="avatar">JM</div><h3>Juan A. Manzanares</h3><p>Socio · Business Partner</p></div>
-    <div class="team-member"><div class="avatar">MT</div><h3>Macarena Tabares</h3><p>Socia · Talent Acquisition Lead</p></div>
-    <div class="team-member"><div class="avatar">FC</div><h3>Florencia Casas</h3><p>ESG & Strategy Consultant</p></div>
-    <div class="team-member"><div class="avatar">RT</div><h3>Rocío Tabares</h3><p>Comunicación & Cultura</p></div>
-    <div class="team-member"><div class="avatar">FG</div><h3>Fernando Rey Gaido</h3><p>Legal & Tech Compliance</p></div>
+  <div class="card">
+    <p>"Reducimos la rotación y fortalecimos nuestra cultura rápidamente."</p>
   </div>
-</div></section>
+</section>
 
-<!-- FEEDBACK -->
-<section id="feedback"><div class="wrapper">
-  <h2 class="section-title">Feedback de Clientes</h2>
-  <div class="testi">“Encontramos nuestro Director Comercial en cuatro semanas y sin sobresaltos.” — CEO, compañía de alimentos</div>
-  <div class="testi">“El programa de cultura redujo la rotación un 40 % en seis meses.” — HR Manager, firma tecnológica</div>
-  <div class="testi">“Su diagnóstico nos dio claridad para reestructurar y crecer.” — Socio fundador, estudio de arquitectura</div>
-</div></section>
+<section id="faq">
+  <h2>Preguntas frecuentes</h2>
+  <div class="faq">
+    <details><summary>¿Tiempo promedio de una búsqueda?</summary><p>Máximo 20 días para shortlist.</p></details>
+    <details><summary>¿Honorarios?</summary><p>Adaptables según tamaño y complejidad del proyecto.</p></details>
+    <details><summary>¿Confidencialidad garantizada?</summary><p>Firmamos NDA y protocolos estrictos.</p></details>
+  </div>
+</section>
 
-<!-- FAQ -->
-<section id="faq"><div class="wrapper">
-  <h2 class="section-title">Preguntas Frecuentes</h2>
-
-  <details><summary>¿Cuánto demora un proceso de búsqueda completo?</summary><p>Presentamos shortlist en un máximo de 20 días hábiles y acompañamos hasta el cierre de oferta.</p></details>
-
-  <details><summary>¿Trabajan con honorarios fijos o success fee?</summary><p>Ofrecemos esquemas mixtos: retainer + success fee, ajustados al tamaño del proyecto y al mercado local.</p></details>
-
-  <details><summary>¿Cubren posiciones fuera de CABA?</summary><p>Sí. Realizamos búsquedas en todo el país y en otros mercados de LatAm gracias a nuestra red de consultores.</p></details>
-
-  <details><summary>¿Cómo garantizan la confidencialidad del proceso?</summary><p>Firmamos NDA, protegemos identidades hasta etapa final y utilizamos canales seguros para compartir información.</p></details>
-
-  <details><summary>¿Qué ocurre si el candidato se desvincula antes de los 3 meses?</summary><p>Incluimos garantía de reposición sin cargo dentro de los primeros 90 días.</p></details>
-
-  <details><summary>¿Tienen experiencia con empresas familiares argentinas?</summary><p>Más del 40 % de nuestros clientes son empresas familiares en transición generacional o expansión regional.</p></details>
-</div></section>
-
-<!-- CONTACTO -->
-<section id="contacto"><div class="wrapper">
-  <h2 class="section-title">Contacto</h2>
-  <p style="text-align:center;margin-bottom:1.8rem;">¿Listo para potenciar tu talento? Escríbenos y respondemos en menos de 24 h.</p>
-
+<section id="contacto">
+  <h2>Contacto</h2>
   <form action="https://formsubmit.co/info@wearemoving.com.ar" method="POST">
-    <input type="hidden" name="_next" value="https://wearemoving.com.ar/gracias.html">
-    <input type="hidden" name="_captcha" value="false">
-
-    <div class="field">
-      <label for="nombre">Nombre y Apellido*</label>
-      <input type="text" id="nombre" name="Nombre" required>
-    </div>
-    <div class="field">
-      <label for="empresa">Empresa / Cargo</label>
-      <input type="text" id="empresa" name="Empresa-Cargo">
-    </div>
-    <div class="field">
-      <label for="email">Email corporativo*</label>
-      <input type="email" id="email" name="Email" required>
-    </div>
-    <div class="field">
-      <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" name="Telefono">
-    </div>
-    <div class="field">
-      <label for="mensaje">Mensaje*</label>
-      <textarea id="mensaje" name="Mensaje" rows="4" required></textarea>
-    </div>
-    <button type="submit" class="btn">Enviar consulta</button>
+    <input type="text" name="Nombre" placeholder="Nombre completo" required>
+    <input type="email" name="Email" placeholder="Email corporativo" required>
+    <input type="text" name="Empresa" placeholder="Empresa/Cargo">
+    <textarea name="Mensaje" rows="4" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+    <button type="submit">Enviar</button>
   </form>
-</div></section>
+</section>
 
-<!-- FOOTER -->
 <footer>
-  © 2025 Wearemoving · <a href="mailto:info@wearemoving.com.ar">info@wearemoving.com.ar</a>
+  ©2025 Wearemoving · info@wearemoving.com.ar
 </footer>
 
 </body>
 </html>
+
