@@ -15,63 +15,75 @@
       --primary:#004C97;
       --accent:#C79A00;
       --light:#fff;
-      --dark:#1a1a1a;
-      --bg:#f5f7fa;
+      --dark:#1A1A1A;
+      --bg:#F7F9FC;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Open Sans",sans-serif;color:var(--dark);background:var(--bg);line-height:1.6}
+    body{font-family:"Open Sans",sans-serif;color:var(--dark);background:var(--bg);line-height:1.65}
     h1,h2,h3{font-family:"Poppins",sans-serif}
     a{text-decoration:none;color:inherit}
-    .wrapper{max-width:1180px;margin:auto;padding:0 1rem}
+    .wrapper{max-width:1200px;margin:auto;padding:0 1rem}
 
     /* NAV */
-    header{position:sticky;top:0;z-index:999;background:var(--light);box-shadow:0 2px 4px rgba(0,0,0,.06)}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0}
-    .logo{font-weight:700;font-size:1.15rem;color:var(--primary)}
-    nav ul{display:flex;gap:1.2rem;list-style:none;font-weight:600;font-size:.95rem}
+    header{position:sticky;top:0;z-index:1000;background:var(--light);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0}
+    .logo{font-weight:700;font-size:1.2rem;color:var(--primary)}
+    nav ul{display:flex;gap:1.4rem;list-style:none;font-weight:600;font-size:.95rem}
 
-    /* HERO (única imagen) */
-    .hero{background:url("images/hero.jpg") center/cover no-repeat fixed;color:var(--light);text-align:center;padding:7.5rem 1rem;position:relative}
+    /* HERO */
+    .hero{background:url("images/hero.jpg") center/cover no-repeat fixed;color:var(--light);text-align:center;padding:8rem 1rem;position:relative}
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
     .hero>*{position:relative;z-index:1}
-    .hero h1{font-size:2.4rem;font-weight:700;margin-bottom:.6rem}
-    .hero p{font-size:1.15rem;margin:.6rem auto 1.4rem;max-width:650px}
-    .btn{display:inline-block;padding:.75rem 1.8rem;background:var(--accent);color:var(--light);border-radius:3px;font-weight:600;transition:.3s}
+    .hero h1{font-size:2.6rem;font-weight:700;margin-bottom:.8rem;line-height:1.2}
+    .hero p{font-size:1.15rem;max-width:700px;margin:.6rem auto 1.6rem}
+    .btn{display:inline-block;padding:.8rem 2rem;background:var(--accent);color:var(--light);border-radius:4px;font-weight:600;transition:.3s}
     .btn:hover{filter:brightness(1.1)}
 
     /* SECTIONS */
-    section{padding:3.5rem 0}
-    .section-title{text-align:center;margin-bottom:2rem}
+    section{padding:4rem 0}
+    .section-title{text-align:center;margin-bottom:2.4rem;font-size:1.9rem;font-weight:700;color:var(--primary)}
+
+    /* QUIENES SOMOS */
+    .about{text-align:center;max-width:900px;margin:auto;font-size:1.05rem}
+    .principles{display:flex;flex-direction:column;gap:.8rem;margin-top:2rem;padding-left:0;list-style:none}
+    .principles li{display:flex;gap:.6rem;justify-content:center;align-items:flex-start}
+    .principles li::before{content:"›";font-weight:700;color:var(--accent);font-size:1.2rem;margin-top:.1rem}
+
+    /* GRID */
     .grid{display:grid;gap:2rem}
     @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
 
     /* Cards */
-    .card{background:var(--light);padding:1.9rem;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.05);transition:.3s}
-    .card:hover{transform:translateY(-4px);box-shadow:0 5px 16px rgba(0,0,0,.08)}
-    .card i{font-size:1.9rem;color:var(--accent);margin-bottom:.9rem}
+    .card{background:var(--light);padding:2rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s}
+    .card:hover{transform:translateY(-5px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .card i{font-size:2rem;color:var(--accent);margin-bottom:1rem}
 
-    /* Methodology graphic */
-    .steps{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:1.5rem}
-    .step{flex:1 1 200px;background:var(--light);border-top:4px solid var(--accent);padding:1.5rem;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.05);text-align:center}
-    .step span{display:inline-block;width:42px;height:42px;line-height:42px;border-radius:50%;background:var(--primary);color:var(--light);font-weight:700;margin-bottom:.8rem}
+    /* Advisory pills */
+    .pill{background:var(--light);padding:.9rem 1.2rem;border-radius:25px;box-shadow:0 2px 6px rgba(0,0,0,.05);font-size:.95rem;text-align:center}
+    .pill:hover{box-shadow:0 3px 9px rgba(0,0,0,.08)}
 
-    /* Equipo carrusel simple */
-    .team-carousel{display:flex;overflow-x:auto;gap:1.5rem;scroll-snap-type:x mandatory;padding-bottom:.5rem}
-    .team-member{flex:0 0 220px;background:var(--light);padding:1.5rem;border-radius:6px;scroll-snap-align:start;box-shadow:0 3px 10px rgba(0,0,0,.05)}
-    .avatar{width:70px;height:70px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-size:1.5rem;font-weight:700;margin-bottom:.8rem}
+    /* Methodology */
+    .steps{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem}
+    .step{flex:1 1 240px;background:var(--light);border-top:5px solid var(--accent);padding:1.8rem;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.05);text-align:center}
+    .step span{display:inline-block;width:44px;height:44px;line-height:44px;border-radius:50%;background:var(--primary);color:var(--light);font-weight:700;margin-bottom:1rem}
 
-    /* Testimonios */
-    .testi{background:var(--light);padding:1.5rem;border-left:4px solid var(--accent);margin-bottom:1.6rem;font-style:italic}
+    /* Equipo carousel */
+    .team-carousel{display:flex;overflow-x:auto;gap:1.8rem;padding-bottom:.6rem;scroll-snap-type:x mandatory}
+    .team-member{flex:0 0 240px;background:var(--light);padding:1.8rem;border-radius:8px;scroll-snap-align:start;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+    .avatar{width:80px;height:80px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-size:1.5rem;font-weight:700;margin:0 auto 1rem}
+
+    /* Feedback */
+    .testi{background:var(--light);padding:1.5rem 1.8rem;border-left:5px solid var(--accent);margin-bottom:1.6rem;font-style:italic;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
 
     /* Form */
-    form{max-width:600px;margin:auto}
-    .field{margin-bottom:1.15rem}
-    .field label{display:block;font-weight:600;margin-bottom:.35rem}
-    .field input,.field textarea{width:100%;padding:.6rem;border:1px solid #c9c9c9;border-radius:4px;font-size:1rem}
+    form{max-width:620px;margin:auto}
+    .field{margin-bottom:1.2rem}
+    .field label{display:block;font-weight:600;margin-bottom:.4rem}
+    .field input,.field textarea{width:100%;padding:.7rem;border:1px solid #c9c9c9;border-radius:4px;font-size:1rem}
     button[type=submit]{cursor:pointer;border:none}
 
     /* Footer */
-    footer{background:var(--primary);color:var(--light);text-align:center;padding:2rem 1rem;font-size:.9rem;margin-top:4rem}
+    footer{background:var(--primary);color:var(--light);text-align:center;padding:2.2rem 1rem;font-size:.9rem;margin-top:4rem}
     footer a{color:var(--accent)}
   </style>
 </head>
@@ -86,7 +98,7 @@
         <li><a href="#quienes">Quiénes Somos</a></li>
         <li><a href="#soluciones">Soluciones</a></li>
         <li><a href="#equipo">Equipo</a></li>
-        <li><a href="#clientes">Feedback</a></li>
+        <li><a href="#feedback">Feedback</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -106,19 +118,19 @@
 <section id="quienes">
   <div class="wrapper">
     <h2 class="section-title">Quiénes Somos</h2>
-    <p style="max-width:740px;margin:auto;text-align:center;">
+    <p class="about">
       Somos un equipo senior con visión regional y estándar global. Acompañamos organizaciones en expansión con un socio dedicado por proyecto,
       metodología ágil y métricas de impacto comprobables.
     </p>
-    <ul style="max-width:740px;margin:2rem auto 0;list-style:square;line-height:1.8;">
-      <li><strong>Talento como motor competitivo</strong></li>
-      <li><strong>Cultura que atrae y retiene</strong></li>
-      <li><strong>Velocidad, confidencialidad y resultados medibles</strong></li>
+    <ul class="principles">
+      <li>Talento como motor competitivo</li>
+      <li>Cultura que atrae y retiene</li>
+      <li>Velocidad, confidencialidad y resultados medibles</li>
     </ul>
   </div>
 </section>
 
-<!-- SOLUCIONES CORE -->
+<!-- SOLUCIONES -->
 <section id="soluciones">
   <div class="wrapper">
     <h2 class="section-title">Soluciones Core</h2>
@@ -126,7 +138,7 @@
       <div class="card">
         <i class="fa-solid fa-user-tie"></i>
         <h3>Full-Spectrum Talent Search</h3>
-        <p>Búsquedas de perfiles C-Level, mandos medios y roles operativos clave. Shortlist en ≤ 20 días hábiles y permanencia &gt; 92 % al año.</p>
+        <p>Búsquedas de perfiles C-Level, mandos medios y roles operativos clave. Shortlist en ≤ 20 días y permanencia &gt; 92 % al año.</p>
       </div>
       <div class="card">
         <i class="fa-solid fa-chart-pie"></i>
@@ -140,13 +152,13 @@
       </div>
     </div>
 
-    <h3 style="margin:3.2rem 0 1rem;">Advisory</h3>
-    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
-      <div class="card"><p>Total Rewards & Compensación</p></div>
-      <div class="card"><p>Reportes ESG / GRI</p></div>
-      <div class="card"><p>Employer Branding & Comunicación interna</p></div>
-      <div class="card"><p>Outplacement ejecutivo y masivo</p></div>
-      <div class="card"><p>Digital HR & HRIS Selection</p></div>
+    <h3 class="section-title" style="margin-top:3.5rem;font-size:1.6rem;">Advisory</h3>
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem;">
+      <div class="pill">Total Rewards & Compensación</div>
+      <div class="pill">Reportes ESG / GRI</div>
+      <div class="pill">Employer Branding & Comunicación Interna</div>
+      <div class="pill">Outplacement Ejecutivo y Masivo</div>
+      <div class="pill">Digital HR & HRIS Selection</div>
     </div>
   </div>
 </section>
@@ -154,7 +166,7 @@
 <!-- METODOLOGÍA -->
 <section style="background:var(--primary);color:var(--light);">
   <div class="wrapper">
-    <h2 class="section-title">Metodología</h2>
+    <h2 class="section-title" style="color:var(--light);">Metodología</h2>
     <div class="steps">
       <div class="step"><span>1</span><h3>Diagnosticar</h3><p>Entendemos negocio, cultura y urgencia.</p></div>
       <div class="step"><span>2</span><h3>Diseñar</h3><p>Definimos estrategia y KPIs con el cliente.</p></div>
@@ -164,7 +176,7 @@
   </div>
 </section>
 
-<!-- EQUIPO (carrusel) -->
+<!-- EQUIPO -->
 <section id="equipo">
   <div class="wrapper">
     <h2 class="section-title">Equipo</h2>
@@ -178,19 +190,19 @@
   </div>
 </section>
 
-<!-- CLIENTES & FEEDBACK (10 comentarios breves) -->
-<section id="clientes">
+<!-- FEEDBACK -->
+<section id="feedback">
   <div class="wrapper">
     <h2 class="section-title">Feedback de Clientes</h2>
 
     <div class="testi">“Encontramos nuestro Director Comercial en cuatro semanas y sin sobresaltos.” — CEO, compañía de alimentos</div>
     <div class="testi">“El programa de cultura redujo la rotación un 40 % en seis meses.” — HR Manager, firma tecnológica</div>
     <div class="testi">“Su diagnóstico nos dio claridad para reestructurar y crecer.” — Socio fundador, estudio de arquitectura</div>
-    <div class="testi">“Excelente onboarding de 50 puestos operativos antes de temporada alta.” — Gerente, cadena retail</div>
+    <div class="testi">“Excelente onboarding de 50 posiciones críticas antes de temporada alta.” — Gerente, cadena retail</div>
     <div class="testi">“Reemplazamos al CFO saliente sin detener las operaciones.” — COO, empresa logística</div>
     <div class="testi">“Las sesiones de liderazgo transformaron la dinámica de nuestro equipo.” — Director, planta industrial</div>
     <div class="testi">“Alinearon compensaciones con mercado y mejoró el clima interno.” — People Lead, SaaS regional</div>
-    <div class="testi">“El servicio de outplacement fue clave para cuidar nuestra marca empleadora.” — HRBP, compañía química</div>
+    <div class="testi">“El outplacement cuidó nuestra marca empleadora durante la reestructuración.” — HRBP, compañía química</div>
     <div class="testi">“Pasamos auditoría ESG sin observaciones gracias a sus reportes.” — CSO, grupo agroindustrial</div>
     <div class="testi">“Integramos un HRIS en tiempo récord y sin fricciones.” — IT & HR Coordinator</div>
   </div>
@@ -200,7 +212,7 @@
 <section id="contacto">
   <div class="wrapper">
     <h2 class="section-title">Contacto</h2>
-    <p style="text-align:center;margin-bottom:1.6rem;">¿Listo para potenciar tu talento? Escríbenos y respondemos en menos de 24 h.</p>
+    <p style="text-align:center;margin-bottom:1.8rem;">¿Listo para potenciar tu talento? Escríbenos y respondemos en menos de 24 h.</p>
 
     <form action="https://formsubmit.co/info@wearemoving.com.ar" method="POST">
       <input type="hidden" name="_next" value="https://wearemoving.com.ar/gracias.html">
@@ -233,8 +245,9 @@
 
 <!-- FOOTER -->
 <footer>
-  © 2025 Wearemoving · <a href="mailto:info@wearemoving.com.ar">info@wearemoving.com.ar</a>
+  © 2025 Wearemoving · <a href="mailto:info@wearemoving.com.ar">info@wearemoving.com.ar</a>
 </footer>
 
 </body>
 </html>
+
