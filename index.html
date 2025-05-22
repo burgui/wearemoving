@@ -1,91 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wearemoving | Talento que impulsa tu crecimiento</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wearemoving | Talento que impulsa tu crecimiento</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
-  <style>
-    :root{
-      --primary:#004C97;
-      --accent:#C79A00;
-      --light:#fff;
-      --dark:#1A1A1A;
-      --bg:#F7F9FC;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Open Sans",sans-serif;color:var(--dark);background:var(--bg);line-height:1.65}
-    h1,h2,h3{font-family:"Poppins",sans-serif}
-    a{text-decoration:none;color:inherit}
-    .wrapper{max-width:1200px;margin:auto;padding:0 1rem}
+<style>
+:root{
+  --primary:#004C97;
+  --accent:#C79A00;
+  --light:#fff;
+  --dark:#1A1A1A;
+  --bg:#F7F9FC;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Open Sans",sans-serif;color:var(--dark);background:var(--bg);line-height:1.65}
+h1,h2,h3{font-family:"Poppins",sans-serif}
+a{text-decoration:none;color:inherit}
+.wrapper{max-width:1200px;margin:auto;padding:0 1rem}
 
-    /* NAV */
-    header{position:sticky;top:0;z-index:1000;background:var(--light);box-shadow:0 2px 6px rgba(0,0,0,.06)}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0}
-    .logo{font-weight:700;font-size:1.2rem;color:var(--primary)}
-    nav ul{display:flex;gap:1.4rem;list-style:none;font-weight:600;font-size:.95rem}
+/* NAV */
+header{position:sticky;top:0;z-index:1000;background:var(--light);box-shadow:0 2px 6px rgba(0,0,0,.06)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0}
+.logo{font-weight:700;font-size:1.2rem;color:var(--primary)}
+nav ul{display:flex;gap:1.3rem;list-style:none;font-weight:600;font-size:.96rem}
 
-    /* HERO */
-    .hero{background:url("images/hero.jpg") center/cover no-repeat fixed;color:var(--light);text-align:center;padding:8rem 1rem;position:relative}
-    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
-    .hero>*{position:relative;z-index:1}
-    .hero h1{font-size:2.6rem;font-weight:700;margin-bottom:.8rem;line-height:1.2}
-    .hero p{font-size:1.15rem;max-width:700px;margin:.6rem auto 1.6rem}
-    .btn{display:inline-block;padding:.8rem 2rem;background:var(--accent);color:var(--light);border-radius:4px;font-weight:600;transition:.3s}
-    .btn:hover{filter:brightness(1.1)}
+/* HERO */
+.hero{background:url("images/hero.jpg") center/cover no-repeat fixed;color:var(--light);text-align:center;padding:8rem 1rem;position:relative}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.hero>*{position:relative;z-index:1}
+.hero h1{font-size:2.6rem;font-weight:700;margin-bottom:.8rem}
+.hero p{font-size:1.15rem;max-width:700px;margin:.6rem auto 1.6rem}
+.btn{display:inline-block;padding:.8rem 2rem;background:var(--accent);color:var(--light);border-radius:4px;font-weight:600;transition:.3s}
+.btn:hover{filter:brightness(1.1)}
 
-    /* SECTIONS */
-    section{padding:4rem 0}
-    .section-title{text-align:center;margin-bottom:2.4rem;font-size:1.9rem;font-weight:700;color:var(--primary)}
+/* SECTIONS */
+section{padding:4rem 0}
+.section-title{text-align:center;margin-bottom:2.4rem;font-size:1.9rem;font-weight:700;color:var(--primary)}
 
-    /* QUIENES SOMOS */
-    .about{text-align:center;max-width:900px;margin:auto;font-size:1.05rem}
-    .principles{display:flex;flex-direction:column;gap:.8rem;margin-top:2rem;padding-left:0;list-style:none}
-    .principles li{display:flex;gap:.6rem;justify-content:center;align-items:flex-start}
-    .principles li::before{content:"›";font-weight:700;color:var(--accent);font-size:1.2rem;margin-top:.1rem}
+/* QUIENES SOMOS */
+.about{text-align:center;max-width:900px;margin:auto;font-size:1.05rem}
+.principles{display:flex;flex-direction:column;gap:.8rem;margin-top:2rem;padding-left:0;list-style:none}
+.principles li{display:flex;gap:.6rem;justify-content:center;align-items:flex-start}
+.principles li::before{content:"›";font-weight:700;color:var(--accent);font-size:1.2rem;margin-top:.1rem}
 
-    /* GRID */
-    .grid{display:grid;gap:2rem}
-    @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
+/* GRID */
+.grid{display:grid;gap:2rem}
+@media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
 
-    /* Cards */
-    .card{background:var(--light);padding:2rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:transform .3s,box-shadow .3s}
-    .card:hover{transform:translateY(-5px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
-    .card i{font-size:2rem;color:var(--accent);margin-bottom:1rem}
+/* Cards */
+.card{background:var(--light);padding:2rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.05);transition:.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.08)}
+.card i{font-size:2rem;color:var(--accent);margin-bottom:1rem}
 
-    /* Advisory pills */
-    .pill{background:var(--light);padding:.9rem 1.2rem;border-radius:25px;box-shadow:0 2px 6px rgba(0,0,0,.05);font-size:.95rem;text-align:center}
-    .pill:hover{box-shadow:0 3px 9px rgba(0,0,0,.08)}
+/* Advisory pills */
+.pill{background:var(--light);padding:.9rem 1.2rem;border-radius:25px;box-shadow:0 2px 6px rgba(0,0,0,.05);font-size:.95rem;text-align:center}
+.pill:hover{box-shadow:0 3px 9px rgba(0,0,0,.08)}
 
-    /* Methodology */
-    .steps{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem}
-    .step{flex:1 1 240px;background:var(--light);border-top:5px solid var(--accent);padding:1.8rem;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.05);text-align:center}
-    .step span{display:inline-block;width:44px;height:44px;line-height:44px;border-radius:50%;background:var(--primary);color:var(--light);font-weight:700;margin-bottom:1rem}
+/* Methodology */
+.steps{display:grid;gap:1.8rem;margin-top:1.8rem}
+@media(min-width:700px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--light);border-top:5px solid var(--accent);padding:1.8rem;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.05);text-align:center}
+.step span{display:inline-block;width:44px;height:44px;line-height:44px;border-radius:50%;background:var(--primary);color:var(--light);font-weight:700;margin-bottom:1rem}
 
-    /* Equipo carousel */
-    .team-carousel{display:flex;overflow-x:auto;gap:1.8rem;padding-bottom:.6rem;scroll-snap-type:x mandatory}
-    .team-member{flex:0 0 240px;background:var(--light);padding:1.8rem;border-radius:8px;scroll-snap-align:start;box-shadow:0 3px 10px rgba(0,0,0,.05)}
-    .avatar{width:80px;height:80px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-size:1.5rem;font-weight:700;margin:0 auto 1rem}
+/* Equipo carousel */
+.team-carousel{display:flex;overflow-x:auto;gap:1.8rem;padding-bottom:.6rem;scroll-snap-type:x mandatory}
+.team-member{flex:0 0 240px;background:var(--light);padding:1.8rem;border-radius:8px;scroll-snap-align:start;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+.avatar{width:80px;height:80px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-size:1.5rem;font-weight:700;margin:0 auto 1rem}
 
-    /* Feedback */
-    .testi{background:var(--light);padding:1.5rem 1.8rem;border-left:5px solid var(--accent);margin-bottom:1.6rem;font-style:italic;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+/* Feedback */
+.testi{background:var(--light);padding:1.5rem 1.8rem;border-left:5px solid var(--accent);margin-bottom:1.8rem;font-style:italic;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.04)}
 
-    /* Form */
-    form{max-width:620px;margin:auto}
-    .field{margin-bottom:1.2rem}
-    .field label{display:block;font-weight:600;margin-bottom:.4rem}
-    .field input,.field textarea{width:100%;padding:.7rem;border:1px solid #c9c9c9;border-radius:4px;font-size:1rem}
-    button[type=submit]{cursor:pointer;border:none}
+/* FAQ */
+details{background:var(--light);margin-bottom:1.2rem;padding:1.2rem;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+details summary{font-weight:600;cursor:pointer}
+details[open]{box-shadow:0 4px 12px rgba(0,0,0,.07)}
+details p{margin-top:.8rem}
 
-    /* Footer */
-    footer{background:var(--primary);color:var(--light);text-align:center;padding:2.2rem 1rem;font-size:.9rem;margin-top:4rem}
-    footer a{color:var(--accent)}
-  </style>
+/* Form */
+form{max-width:620px;margin:auto}
+.field{margin-bottom:1.2rem}
+.field label{display:block;font-weight:600;margin-bottom:.4rem}
+.field input,.field textarea{width:100%;padding:.7rem;border:1px solid #c9c9c9;border-radius:4px;font-size:1rem}
+button[type=submit]{cursor:pointer;border:none}
+
+/* Footer */
+footer{background:var(--primary);color:var(--light);text-align:center;padding:2.2rem 1rem;font-size:.9rem;margin-top:4rem}
+footer a{color:var(--accent)}
+</style>
 </head>
 <body>
 
@@ -99,6 +106,7 @@
         <li><a href="#soluciones">Soluciones</a></li>
         <li><a href="#equipo">Equipo</a></li>
         <li><a href="#feedback">Feedback</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -138,12 +146,12 @@
       <div class="card">
         <i class="fa-solid fa-user-tie"></i>
         <h3>Full-Spectrum Talent Search</h3>
-        <p>Búsquedas de perfiles C-Level, mandos medios y roles operativos clave. Shortlist en ≤ 20 días y permanencia &gt; 92 % al año.</p>
+        <p>Perfiles C-Level, mandos medios y roles operativos clave. Shortlist ≤ 20 días y permanencia &gt; 92 % al año.</p>
       </div>
       <div class="card">
         <i class="fa-solid fa-chart-pie"></i>
         <h3>Organizational Diagnostics</h3>
-        <p>Radiografía 360° de estructura, procesos y clima. Quick wins y plan a 12 meses alineado a objetivos.</p>
+        <p>Radiografía 360 ° de estructura, procesos y clima. Quick wins y plan a 12 meses alineado a objetivos.</p>
       </div>
       <div class="card">
         <i class="fa-solid fa-people-group"></i>
@@ -152,7 +160,7 @@
       </div>
     </div>
 
-    <h3 class="section-title" style="margin-top:3.5rem;font-size:1.6rem;">Advisory</h3>
+    <h3 class="section-title" style="margin-top:3.4rem;font-size:1.6rem;">Advisory</h3>
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.2rem;">
       <div class="pill">Total Rewards & Compensación</div>
       <div class="pill">Reportes ESG / GRI</div>
@@ -194,17 +202,31 @@
 <section id="feedback">
   <div class="wrapper">
     <h2 class="section-title">Feedback de Clientes</h2>
-
     <div class="testi">“Encontramos nuestro Director Comercial en cuatro semanas y sin sobresaltos.” — CEO, compañía de alimentos</div>
     <div class="testi">“El programa de cultura redujo la rotación un 40 % en seis meses.” — HR Manager, firma tecnológica</div>
     <div class="testi">“Su diagnóstico nos dio claridad para reestructurar y crecer.” — Socio fundador, estudio de arquitectura</div>
-    <div class="testi">“Excelente onboarding de 50 posiciones críticas antes de temporada alta.” — Gerente, cadena retail</div>
-    <div class="testi">“Reemplazamos al CFO saliente sin detener las operaciones.” — COO, empresa logística</div>
-    <div class="testi">“Las sesiones de liderazgo transformaron la dinámica de nuestro equipo.” — Director, planta industrial</div>
-    <div class="testi">“Alinearon compensaciones con mercado y mejoró el clima interno.” — People Lead, SaaS regional</div>
-    <div class="testi">“El outplacement cuidó nuestra marca empleadora durante la reestructuración.” — HRBP, compañía química</div>
-    <div class="testi">“Pasamos auditoría ESG sin observaciones gracias a sus reportes.” — CSO, grupo agroindustrial</div>
-    <div class="testi">“Integramos un HRIS en tiempo récord y sin fricciones.” — IT & HR Coordinator</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="wrapper">
+    <h2 class="section-title">Preguntas Frecuentes</h2>
+
+    <details>
+      <summary>¿Trabajan con industrias específicas?</summary>
+      <p>Tenemos experiencia transversal: tecnología, agroindustria, consumo masivo, servicios y manufactura.</p>
+    </details>
+
+    <details>
+      <summary>¿Cómo se mide el éxito de una búsqueda?</summary>
+      <p>KPIs clave: tiempo hasta shortlist, tiempo hasta contratación y tasa de permanencia a 12 meses (&gt; 92 %).</p>
+    </details>
+
+    <details>
+      <summary>¿Ofrecen servicios en otros países de la región?</summary>
+      <p>Sí. Operamos con red de consultores en LatAm y acompañamos expansiones internacionales.</p>
+    </details>
   </div>
 </section>
 
@@ -250,4 +272,3 @@
 
 </body>
 </html>
-
