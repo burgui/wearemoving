@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wearemoving | Moving people, transforming businesses</title>
+  <title>Wearemoving | Talento para pymes y medianas empresas</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
+  <!-- Font Awesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
   <style>
@@ -19,80 +19,57 @@
       --bg:#F5F7FA;
     }
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Open Sans",sans-serif;line-height:1.6;color:var(--dark);background:var(--bg)}
+    body{font-family:"Open Sans",sans-serif;color:var(--dark);background:var(--bg);line-height:1.6}
     h1,h2,h3{font-family:"Poppins",sans-serif}
     a{color:inherit;text-decoration:none}
-    .wrapper{max-width:1200px;margin:auto;padding:0 1rem}
+    .wrapper{max-width:1180px;margin:auto;padding:0 1rem}
 
-    /* ---------- NAV ---------- */
-    header{position:sticky;top:0;z-index:1000;background:var(--light);box-shadow:0 2px 4px rgba(0,0,0,.08)}
-    nav{display:flex;justify-content:space-between;align-items:center;padding:.8rem 0}
-    nav .logo{font-weight:700;color:var(--primary);letter-spacing:.5px}
-    nav ul{display:flex;gap:1.5rem;list-style:none}
-    nav li{font-weight:600}
+    /* NAV */
+    header{position:sticky;top:0;background:var(--light);box-shadow:0 2px 4px rgba(0,0,0,.06);z-index:999}
+    nav{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0}
+    .logo{font-weight:700;font-size:1.15rem;color:var(--primary)}
+    nav ul{display:flex;gap:1.2rem;list-style:none;font-weight:600;font-size:.95rem}
 
-    /* ---------- HERO ---------- */
+    /* HERO */
     .hero{
       background:url("images/hero.jpg") center/cover no-repeat fixed;
-      color:var(--light);
-      text-align:center;
-      padding:8rem 1rem;
-      position:relative;
+      color:var(--light);text-align:center;padding:7.5rem 1rem;position:relative
     }
-    .hero::before{
-      content:"";position:absolute;inset:0;
-      background:rgba(0,0,0,.55);
-    }
+    .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
     .hero>*{position:relative;z-index:1}
-    .hero h1{font-size:2.6rem;font-weight:700;margin-bottom:.75rem}
-    .hero p{font-size:1.15rem;margin-bottom:1.5rem}
-    .btn{
-      display:inline-block;padding:.75rem 1.75rem;
-      background:var(--accent);color:var(--light);
-      border-radius:3px;font-weight:600;transition:.3s;
-    }
+    .hero h1{font-size:2.4rem;font-weight:700;margin-bottom:.6rem}
+    .hero p{font-size:1.15rem;margin-bottom:1.4rem;max-width:650px;margin-inline:auto}
+    .btn{display:inline-block;padding:.75rem 1.75rem;background:var(--accent);color:var(--light);border-radius:3px;font-weight:600;transition:.3s}
     .btn:hover{filter:brightness(1.1)}
 
-    /* ---------- SECTIONS ---------- */
-    section{padding:4rem 0}
-    .section-title{text-align:center;margin-bottom:2.5rem}
+    /* SECTIONS */
+    section{padding:3.5rem 0}
+    .section-title{text-align:center;margin-bottom:2rem}
     .grid{display:grid;gap:2rem}
     @media(min-width:768px){.grid-3{grid-template-columns:repeat(3,1fr)}}
 
     /* Cards */
-    .card{
-      background:var(--light);padding:2rem;border-radius:6px;
-      box-shadow:0 4px 12px rgba(0,0,0,.05);transition:.3s;
-    }
-    .card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.08)}
-    .card i{font-size:2rem;color:var(--accent);margin-bottom:1rem}
+    .card{background:var(--light);padding:1.9rem;border-radius:6px;box-shadow:0 3px 10px rgba(0,0,0,.05);transition:.3s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 5px 16px rgba(0,0,0,.08)}
+    .card i{font-size:1.9rem;color:var(--accent);margin-bottom:.9rem}
 
-    /* Equipo */
-    .avatar{
-      width:90px;height:90px;border-radius:50%;background:var(--primary);
-      color:var(--light);display:flex;justify-content:center;align-items:center;
-      font-size:1.8rem;font-weight:700;margin:0 auto 1rem;
-    }
+    /* Avatar circulares */
+    .avatar{width:85px;height:85px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-size:1.6rem;font-weight:700;margin:0 auto 1rem}
 
-    /* Clientes */
-    .logos{display:flex;flex-wrap:wrap;justify-content:center;gap:2.5rem}
-    .logos img{height:50px;filter:grayscale(1);transition:.3s}
+    /* Logos */
+    .logos{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem}
+    .logos img{height:48px;filter:grayscale(1);transition:.3s}
     .logos img:hover{filter:none}
 
-    /* Testimonios */
-    blockquote{font-style:italic;background:var(--light);padding:2rem;border-left:4px solid var(--accent)}
-
-    /* Formulario */
+    /* Form */
     form{max-width:600px;margin:auto}
-    .field{margin-bottom:1.25rem}
+    .field{margin-bottom:1.15rem}
     .field label{display:block;font-weight:600;margin-bottom:.35rem}
-    .field input,.field textarea{
-      width:100%;padding:.65rem;border:1px solid #ccc;border-radius:4px;font-size:1rem;
-    }
+    .field input,.field textarea{width:100%;padding:.6rem;border:1px solid #c9c9c9;border-radius:4px;font-size:1rem}
     button[type=submit]{cursor:pointer;border:none}
 
     /* Footer */
-    footer{background:var(--primary);color:var(--light);text-align:center;padding:2rem 1rem;margin-top:4rem;font-size:.9rem}
+    footer{background:var(--primary);color:var(--light);text-align:center;padding:2rem 1rem;font-size:.9rem;margin-top:4rem}
     footer a{color:var(--accent)}
   </style>
 </head>
@@ -100,7 +77,7 @@
 
 <!-- NAV -->
 <header>
-  <div class="wrapper nav-wrapper">
+  <div class="wrapper">
     <nav>
       <div class="logo">Wearemoving</div>
       <ul>
@@ -117,9 +94,9 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrapper">
-    <h1>Moving people, transforming businesses</h1>
-    <p>Boutique argentina de talento y cultura organizacional. Encontramos, desarrollamos y retenemos a las personas que mueven tu negocio.</p>
-    <a href="#contacto" class="btn">Hablemos</a>
+    <h1>Talento que hace crecer tu pyme</h1>
+    <p>Somos la boutique argentina que conecta, desarrolla y retiene al talento clave para pymes y empresas medianas que quieren escalar sin perder su esencia.</p>
+    <a href="#contacto" class="btn">Solicitar asesoría</a>
   </div>
 </section>
 
@@ -127,18 +104,18 @@
 <section id="quienes">
   <div class="wrapper">
     <h2 class="section-title">Quiénes Somos</h2>
-    <p style="max-width:760px;margin:auto;text-align:center;">
-      Somos un equipo senior con experiencia regional y estándar global. Actuamos como partner estratégico de RR.&nbsp;HH.: un socio al frente de cada proyecto, metodología ágil y confidencialidad absoluta.
+    <p style="max-width:740px;margin:auto;text-align:center;">
+      Trabajamos codo a codo con equipos directivos de pymes y compañías medianas de alto crecimiento. Cada proyecto cuenta con la dedicación de un socio, una metodología ágil y métricas claras de retorno.
     </p>
-    <ul style="max-width:760px;margin:2rem auto;list-style:square;line-height:1.8;">
-      <li><strong>Talento como activo estratégico</strong></li>
-      <li><strong>Cultura como ventaja competitiva</strong></li>
-      <li><strong>Ejecución con rigor y velocidad</strong></li>
+    <ul style="max-width:740px;margin:2rem auto 0;list-style:square;line-height:1.8;">
+      <li><strong>Talento como motor competitivo.</strong></li>
+      <li><strong>Cultura que atrae y retiene.</strong></li>
+      <li><strong>Velocidad y confidencialidad</strong> en cada búsqueda.</li>
     </ul>
   </div>
 </section>
 
-<!-- SOLUCIONES CORE -->
+<!-- SOLUCIONES -->
 <section id="soluciones">
   <div class="wrapper">
     <h2 class="section-title">Soluciones Core</h2>
@@ -146,51 +123,27 @@
       <div class="card">
         <i class="fa-solid fa-user-tie"></i>
         <h3>Full-Spectrum Talent Search</h3>
-        <p>Búsquedas C-Suite, mandos medios y operativos estratégicos con shortlist en ≤ 20 días y permanencia &gt; 92 % al año.</p>
+        <p>Búsquedas C-Level, mandos medios y puestos operativos críticos. Shortlist en ≤ 20 días, permanencia &gt; 92 % al año.</p>
       </div>
-
       <div class="card">
         <i class="fa-solid fa-chart-pie"></i>
         <h3>Organizational Diagnostics</h3>
-        <p>Radiografía 360° de estructura, procesos y clima. Roadmap con quick wins y metas a 12 meses.</p>
+        <p>Radiografía 360° de estructura, procesos y clima. Roadmap de quick wins y plan de 12 meses.</p>
       </div>
-
       <div class="card">
         <i class="fa-solid fa-people-group"></i>
         <h3>Leadership & Culture Development</h3>
-        <p>Programas in-company que alinean competencias de liderazgo y cultura con la estrategia del negocio.</p>
+        <p>Programas in-company para alinear liderazgo, feedback y valores con el negocio.</p>
       </div>
     </div>
 
-    <!-- Advisory mini-list -->
-    <h3 style="margin:3.5rem 0 1rem;">Advisory</h3>
-    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+    <h3 style="margin:3.2rem 0 1rem;">Advisory</h3>
+    <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
       <div class="card"><p>Total Rewards &amp; Compensación</p></div>
       <div class="card"><p>Reportes ESG / GRI</p></div>
-      <div class="card"><p>Comunicación interna &amp; Employer Branding</p></div>
+      <div class="card"><p>Employer Branding &amp; Comunicación Interna</p></div>
       <div class="card"><p>Outplacement Ejecutivo y Masivo</p></div>
       <div class="card"><p>Digital HR &amp; HRIS Selection</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- METODOLOGÍA -->
-<section style="background:var(--primary);color:var(--light);">
-  <div class="wrapper">
-    <h2 class="section-title">Metodología</h2>
-    <div class="grid grid-3" style="gap:1.5rem;">
-      <div>
-        <h3>1. Diagnosticar</h3><p>Entendemos negocio, cultura y urgencia.</p>
-      </div>
-      <div>
-        <h3>2. Diseñar</h3><p>Definimos estrategia y KPIs con el cliente.</p>
-      </div>
-      <div>
-        <h3>3. Ejecutar</h3><p>Deploy ágil con reporting semanal.</p>
-      </div>
-      <div>
-        <h3>4. Medir</h3><p>Dashboard de impacto y ajustes continuos.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -200,31 +153,11 @@
   <div class="wrapper">
     <h2 class="section-title">Equipo</h2>
     <div class="grid grid-3">
-      <div class="card">
-        <div class="avatar">JM</div>
-        <h3>Juan A. Manzanares</h3>
-        <p>Socio · Business Partner</p>
-      </div>
-      <div class="card">
-        <div class="avatar">MT</div>
-        <h3>Macarena Tabares</h3>
-        <p>Socia · Talent Acquisition Lead</p>
-      </div>
-      <div class="card">
-        <div class="avatar">FC</div>
-        <h3>Florencia Casas</h3>
-        <p>ESG &amp; Strategy Consultant</p>
-      </div>
-      <div class="card">
-        <div class="avatar">RT</div>
-        <h3>Rocío Tabares</h3>
-        <p>Comunicación &amp; Cultura</p>
-      </div>
-      <div class="card">
-        <div class="avatar">FG</div>
-        <h3>Fernando Rey Gaido</h3>
-        <p>Legal &amp; Tech Compliance</p>
-      </div>
+      <div class="card"><div class="avatar">JM</div><h3>Juan A. Manzanares</h3><p>Socio · Business Partner</p></div>
+      <div class="card"><div class="avatar">MT</div><h3>Macarena Tabares</h3><p>Socia · Talent Acquisition Lead</p></div>
+      <div class="card"><div class="avatar">FC</div><h3>Florencia Casas</h3><p>ESG &amp; Strategy Consultant</p></div>
+      <div class="card"><div class="avatar">RT</div><h3>Rocío Tabares</h3><p>Comunicación &amp; Cultura</p></div>
+      <div class="card"><div class="avatar">FG</div><h3>Fernando Rey Gaido</h3><p>Legal &amp; Tech Compliance</p></div>
     </div>
   </div>
 </section>
@@ -233,27 +166,21 @@
 <section id="clientes">
   <div class="wrapper">
     <h2 class="section-title">Clientes &amp; Trayectoria</h2>
-    <p style="text-align:center;margin-bottom:1.8rem;">Scale-ups fintech, multilatinas de consumo masivo, grupos industriales y empresas B certificadas.</p>
+    <p style="text-align:center;margin-bottom:1.6rem;">Más de 100 pymes y medianas empresas de industria, tecnología y consumo confían en nosotros.</p>
     <div class="logos">
-      <img src="https://via.placeholder.com/160x50?text=Logo+1" alt="Logo 1">
-      <img src="https://via.placeholder.com/160x50?text=Logo+2" alt="Logo 2">
-      <img src="https://via.placeholder.com/160x50?text=Logo+3" alt="Logo 3">
-      <img src="https://via.placeholder.com/160x50?text=Logo+4" alt="Logo 4">
+      <img src="https://via.placeholder.com/160x48?text=Logo+1" alt="Logo 1">
+      <img src="https://via.placeholder.com/160x48?text=Logo+2" alt="Logo 2">
+      <img src="https://via.placeholder.com/160x48?text=Logo+3" alt="Logo 3">
+      <img src="https://via.placeholder.com/160x48?text=Logo+4" alt="Logo 4">
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIOS -->
+<!-- CTA + TESTIMONIO BREVE -->
 <section>
   <div class="wrapper">
-    <h2 class="section-title">Testimonios</h2>
-    <blockquote>
-      “Cubrieron 65 posiciones operativas y nuestros dos directores regionales en un trimestre, sin perder cultura.”  
-      <br>— HRD, retail LATAM
-    </blockquote>
-    <blockquote style="margin-top:2rem;">
-      “Bajamos la rotación del 18 % al 6 % con su programa de liderazgo.”  
-      <br>— VP People, fintech
+    <blockquote style="background:var(--light);padding:2rem;border-left:4px solid var(--accent);margin-bottom:2.2rem;max-width:800px;margin-inline:auto;font-style:italic;">
+      “En 10 semanas cubrieron todas nuestras posiciones clave y redujimos la rotación operativa a la mitad.” — CEO, fábrica textil
     </blockquote>
   </div>
 </section>
@@ -262,23 +189,28 @@
 <section id="contacto">
   <div class="wrapper">
     <h2 class="section-title">Contacto</h2>
-    <p style="text-align:center;margin-bottom:2rem;">¿Listo para potenciar tu talento?</p>
-    <form action="https://formspree.io/f/tu-id" method="POST">
+    <p style="text-align:center;margin-bottom:1.6rem;">¿Listo para potenciar tu talento? Escribinos y respondemos en menos de 24 h.</p>
+
+    <form action="https://formsubmit.co/info@wearemoving.com.ar" method="POST">
+      <!-- Opcionales de FormSubmit -->
+      <input type="hidden" name="_next" value="https://wearemoving.com.ar/gracias.html">
+      <input type="hidden" name="_captcha" value="false">
+
       <div class="field">
         <label for="nombre">Nombre y Apellido*</label>
-        <input type="text" id="nombre" name="Nombre" required>
+        <input type="text" id="nombre" name="Nombre" required />
       </div>
       <div class="field">
         <label for="empresa">Empresa / Cargo</label>
-        <input type="text" id="empresa" name="Empresa-Cargo">
+        <input type="text" id="empresa" name="Empresa-Cargo" />
       </div>
       <div class="field">
         <label for="email">Email corporativo*</label>
-        <input type="email" id="email" name="_replyto" required>
+        <input type="email" id="email" name="Email" required />
       </div>
       <div class="field">
         <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="Telefono">
+        <input type="tel" id="telefono" name="Telefono" />
       </div>
       <div class="field">
         <label for="mensaje">Mensaje*</label>
@@ -291,9 +223,8 @@
 
 <!-- FOOTER -->
 <footer>
-  © 2025 Wearemoving — Todos los derechos reservados · <a href="mailto:info@wearemoving.com.ar">info@wearemoving.com.ar</a>
+  © 2025 Wearemoving · <a href="mailto:info@wearemoving.com.ar">info@wearemoving.com.ar</a>
 </footer>
 
 </body>
 </html>
-
