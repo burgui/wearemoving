@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wearemoving | Talento para pymes y medianas empresas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wearemoving | Talento que impulsa tu crecimiento</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <!-- Font Awesome para íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
     :root{
       --primary:#004C97;
       --accent:#C79A00;
-      --light:#FFFFFF;
-      --dark:#1A1A1A;
-      --bg:#F5F7FA;
+      --light:#fff;
+      --dark:#1a1a1a;
+      --bg:#f5f7fa;
     }
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:"Open Sans",sans-serif;color:var(--dark);background:var(--bg);line-height:1.6}
     h1,h2,h3{font-family:"Poppins",sans-serif}
-    a{color:inherit;text-decoration:none}
+    a{text-decoration:none;color:inherit}
     .wrapper{max-width:1180px;margin:auto;padding:0 1rem}
 
     /* NAV */
-    header{position:sticky;top:0;background:var(--light);box-shadow:0 2px 4px rgba(0,0,0,.06);z-index:999}
+    header{position:sticky;top:0;z-index:999;background:var(--light);box-shadow:0 2px 4px rgba(0,0,0,.06)}
     nav{display:flex;justify-content:space-between;align-items:center;padding:.75rem 0}
     .logo{font-weight:700;font-size:1.15rem;color:var(--primary)}
     nav ul{display:flex;gap:1.2rem;list-style:none;font-weight:600;font-size:.95rem}
 
-    /* HERO */
-    .hero{
-      background:url("images/hero.jpg") center/cover no-repeat fixed;
-      color:var(--light);text-align:center;padding:7.5rem 1rem;position:relative
-    }
+    /* HERO (única imagen) */
+    .hero{background:url("images/hero.jpg") center/cover no-repeat fixed;color:var(--light);text-align:center;padding:7.5rem 1rem;position:relative}
     .hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.55)}
     .hero>*{position:relative;z-index:1}
     .hero h1{font-size:2.4rem;font-weight:700;margin-bottom:.6rem}
-    .hero p{font-size:1.15rem;margin-bottom:1.4rem;max-width:650px;margin-inline:auto}
-    .btn{display:inline-block;padding:.75rem 1.75rem;background:var(--accent);color:var(--light);border-radius:3px;font-weight:600;transition:.3s}
+    .hero p{font-size:1.15rem;margin:.6rem auto 1.4rem;max-width:650px}
+    .btn{display:inline-block;padding:.75rem 1.8rem;background:var(--accent);color:var(--light);border-radius:3px;font-weight:600;transition:.3s}
     .btn:hover{filter:brightness(1.1)}
 
     /* SECTIONS */
@@ -53,13 +50,18 @@
     .card:hover{transform:translateY(-4px);box-shadow:0 5px 16px rgba(0,0,0,.08)}
     .card i{font-size:1.9rem;color:var(--accent);margin-bottom:.9rem}
 
-    /* Avatar circulares */
-    .avatar{width:85px;height:85px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-size:1.6rem;font-weight:700;margin:0 auto 1rem}
+    /* Methodology graphic */
+    .steps{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:1.5rem}
+    .step{flex:1 1 200px;background:var(--light);border-top:4px solid var(--accent);padding:1.5rem;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.05);text-align:center}
+    .step span{display:inline-block;width:42px;height:42px;line-height:42px;border-radius:50%;background:var(--primary);color:var(--light);font-weight:700;margin-bottom:.8rem}
 
-    /* Logos */
-    .logos{display:flex;flex-wrap:wrap;justify-content:center;gap:2rem}
-    .logos img{height:48px;filter:grayscale(1);transition:.3s}
-    .logos img:hover{filter:none}
+    /* Equipo carrusel simple */
+    .team-carousel{display:flex;overflow-x:auto;gap:1.5rem;scroll-snap-type:x mandatory;padding-bottom:.5rem}
+    .team-member{flex:0 0 220px;background:var(--light);padding:1.5rem;border-radius:6px;scroll-snap-align:start;box-shadow:0 3px 10px rgba(0,0,0,.05)}
+    .avatar{width:70px;height:70px;border-radius:50%;background:var(--primary);color:var(--light);display:flex;justify-content:center;align-items:center;font-size:1.5rem;font-weight:700;margin-bottom:.8rem}
+
+    /* Testimonios */
+    .testi{background:var(--light);padding:1.5rem;border-left:4px solid var(--accent);margin-bottom:1.6rem;font-style:italic}
 
     /* Form */
     form{max-width:600px;margin:auto}
@@ -84,7 +86,7 @@
         <li><a href="#quienes">Quiénes Somos</a></li>
         <li><a href="#soluciones">Soluciones</a></li>
         <li><a href="#equipo">Equipo</a></li>
-        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#clientes">Feedback</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -94,8 +96,8 @@
 <!-- HERO -->
 <section class="hero">
   <div class="wrapper">
-    <h1>Talento que hace crecer tu pyme</h1>
-    <p>Somos la boutique argentina que conecta, desarrolla y retiene al talento clave para pymes y empresas medianas que quieren escalar sin perder su esencia.</p>
+    <h1>Talento que impulsa tu crecimiento</h1>
+    <p>Boutique argentina de headhunting y cultura organizacional. Conectamos, desarrollamos y retenemos a las personas que hacen avanzar tu negocio.</p>
     <a href="#contacto" class="btn">Solicitar asesoría</a>
   </div>
 </section>
@@ -105,17 +107,18 @@
   <div class="wrapper">
     <h2 class="section-title">Quiénes Somos</h2>
     <p style="max-width:740px;margin:auto;text-align:center;">
-      Trabajamos codo a codo con equipos directivos de pymes y compañías medianas de alto crecimiento. Cada proyecto cuenta con la dedicación de un socio, una metodología ágil y métricas claras de retorno.
+      Somos un equipo senior con visión regional y estándar global. Acompañamos organizaciones en expansión con un socio dedicado por proyecto,
+      metodología ágil y métricas de impacto comprobables.
     </p>
     <ul style="max-width:740px;margin:2rem auto 0;list-style:square;line-height:1.8;">
-      <li><strong>Talento como motor competitivo.</strong></li>
-      <li><strong>Cultura que atrae y retiene.</strong></li>
-      <li><strong>Velocidad y confidencialidad</strong> en cada búsqueda.</li>
+      <li><strong>Talento como motor competitivo</strong></li>
+      <li><strong>Cultura que atrae y retiene</strong></li>
+      <li><strong>Velocidad, confidencialidad y resultados medibles</strong></li>
     </ul>
   </div>
 </section>
 
-<!-- SOLUCIONES -->
+<!-- SOLUCIONES CORE -->
 <section id="soluciones">
   <div class="wrapper">
     <h2 class="section-title">Soluciones Core</h2>
@@ -123,65 +126,73 @@
       <div class="card">
         <i class="fa-solid fa-user-tie"></i>
         <h3>Full-Spectrum Talent Search</h3>
-        <p>Búsquedas C-Level, mandos medios y puestos operativos críticos. Shortlist en ≤ 20 días, permanencia &gt; 92 % al año.</p>
+        <p>Búsquedas de perfiles C-Level, mandos medios y roles operativos clave. Shortlist en ≤ 20 días hábiles y permanencia &gt; 92 % al año.</p>
       </div>
       <div class="card">
         <i class="fa-solid fa-chart-pie"></i>
         <h3>Organizational Diagnostics</h3>
-        <p>Radiografía 360° de estructura, procesos y clima. Roadmap de quick wins y plan de 12 meses.</p>
+        <p>Radiografía 360° de estructura, procesos y clima. Quick wins y plan a 12 meses alineado a objetivos.</p>
       </div>
       <div class="card">
         <i class="fa-solid fa-people-group"></i>
         <h3>Leadership & Culture Development</h3>
-        <p>Programas in-company para alinear liderazgo, feedback y valores con el negocio.</p>
+        <p>Programas in-company que sincronizan liderazgo, feedback y valores con la estrategia corporativa.</p>
       </div>
     </div>
 
     <h3 style="margin:3.2rem 0 1rem;">Advisory</h3>
     <div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr));">
-      <div class="card"><p>Total Rewards &amp; Compensación</p></div>
+      <div class="card"><p>Total Rewards & Compensación</p></div>
       <div class="card"><p>Reportes ESG / GRI</p></div>
-      <div class="card"><p>Employer Branding &amp; Comunicación Interna</p></div>
-      <div class="card"><p>Outplacement Ejecutivo y Masivo</p></div>
-      <div class="card"><p>Digital HR &amp; HRIS Selection</p></div>
+      <div class="card"><p>Employer Branding & Comunicación interna</p></div>
+      <div class="card"><p>Outplacement ejecutivo y masivo</p></div>
+      <div class="card"><p>Digital HR & HRIS Selection</p></div>
     </div>
   </div>
 </section>
 
-<!-- EQUIPO -->
+<!-- METODOLOGÍA -->
+<section style="background:var(--primary);color:var(--light);">
+  <div class="wrapper">
+    <h2 class="section-title">Metodología</h2>
+    <div class="steps">
+      <div class="step"><span>1</span><h3>Diagnosticar</h3><p>Entendemos negocio, cultura y urgencia.</p></div>
+      <div class="step"><span>2</span><h3>Diseñar</h3><p>Definimos estrategia y KPIs con el cliente.</p></div>
+      <div class="step"><span>3</span><h3>Ejecutar</h3><p>Implementación ágil con reportes semanales.</p></div>
+      <div class="step"><span>4</span><h3>Medir</h3><p>Dashboard de impacto y ajustes continuos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO (carrusel) -->
 <section id="equipo">
   <div class="wrapper">
     <h2 class="section-title">Equipo</h2>
-    <div class="grid grid-3">
-      <div class="card"><div class="avatar">JM</div><h3>Juan A. Manzanares</h3><p>Socio · Business Partner</p></div>
-      <div class="card"><div class="avatar">MT</div><h3>Macarena Tabares</h3><p>Socia · Talent Acquisition Lead</p></div>
-      <div class="card"><div class="avatar">FC</div><h3>Florencia Casas</h3><p>ESG &amp; Strategy Consultant</p></div>
-      <div class="card"><div class="avatar">RT</div><h3>Rocío Tabares</h3><p>Comunicación &amp; Cultura</p></div>
-      <div class="card"><div class="avatar">FG</div><h3>Fernando Rey Gaido</h3><p>Legal &amp; Tech Compliance</p></div>
+    <div class="team-carousel">
+      <div class="team-member"><div class="avatar">JM</div><h3>Juan A. Manzanares</h3><p>Socio · Business Partner</p></div>
+      <div class="team-member"><div class="avatar">MT</div><h3>Macarena Tabares</h3><p>Socia · Talent Acquisition Lead</p></div>
+      <div class="team-member"><div class="avatar">FC</div><h3>Florencia Casas</h3><p>ESG & Strategy Consultant</p></div>
+      <div class="team-member"><div class="avatar">RT</div><h3>Rocío Tabares</h3><p>Comunicación & Cultura</p></div>
+      <div class="team-member"><div class="avatar">FG</div><h3>Fernando Rey Gaido</h3><p>Legal & Tech Compliance</p></div>
     </div>
   </div>
 </section>
 
-<!-- CLIENTES -->
+<!-- CLIENTES & FEEDBACK (10 comentarios breves) -->
 <section id="clientes">
   <div class="wrapper">
-    <h2 class="section-title">Clientes &amp; Trayectoria</h2>
-    <p style="text-align:center;margin-bottom:1.6rem;">Más de 100 pymes y medianas empresas de industria, tecnología y consumo confían en nosotros.</p>
-    <div class="logos">
-      <img src="https://via.placeholder.com/160x48?text=Logo+1" alt="Logo 1">
-      <img src="https://via.placeholder.com/160x48?text=Logo+2" alt="Logo 2">
-      <img src="https://via.placeholder.com/160x48?text=Logo+3" alt="Logo 3">
-      <img src="https://via.placeholder.com/160x48?text=Logo+4" alt="Logo 4">
-    </div>
-  </div>
-</section>
+    <h2 class="section-title">Feedback de Clientes</h2>
 
-<!-- CTA + TESTIMONIO BREVE -->
-<section>
-  <div class="wrapper">
-    <blockquote style="background:var(--light);padding:2rem;border-left:4px solid var(--accent);margin-bottom:2.2rem;max-width:800px;margin-inline:auto;font-style:italic;">
-      “En 10 semanas cubrieron todas nuestras posiciones clave y redujimos la rotación operativa a la mitad.” — CEO, fábrica textil
-    </blockquote>
+    <div class="testi">“Encontramos nuestro Director Comercial en cuatro semanas y sin sobresaltos.” — CEO, compañía de alimentos</div>
+    <div class="testi">“El programa de cultura redujo la rotación un 40 % en seis meses.” — HR Manager, firma tecnológica</div>
+    <div class="testi">“Su diagnóstico nos dio claridad para reestructurar y crecer.” — Socio fundador, estudio de arquitectura</div>
+    <div class="testi">“Excelente onboarding de 50 puestos operativos antes de temporada alta.” — Gerente, cadena retail</div>
+    <div class="testi">“Reemplazamos al CFO saliente sin detener las operaciones.” — COO, empresa logística</div>
+    <div class="testi">“Las sesiones de liderazgo transformaron la dinámica de nuestro equipo.” — Director, planta industrial</div>
+    <div class="testi">“Alinearon compensaciones con mercado y mejoró el clima interno.” — People Lead, SaaS regional</div>
+    <div class="testi">“El servicio de outplacement fue clave para cuidar nuestra marca empleadora.” — HRBP, compañía química</div>
+    <div class="testi">“Pasamos auditoría ESG sin observaciones gracias a sus reportes.” — CSO, grupo agroindustrial</div>
+    <div class="testi">“Integramos un HRIS en tiempo récord y sin fricciones.” — IT & HR Coordinator</div>
   </div>
 </section>
 
@@ -189,28 +200,27 @@
 <section id="contacto">
   <div class="wrapper">
     <h2 class="section-title">Contacto</h2>
-    <p style="text-align:center;margin-bottom:1.6rem;">¿Listo para potenciar tu talento? Escribinos y respondemos en menos de 24 h.</p>
+    <p style="text-align:center;margin-bottom:1.6rem;">¿Listo para potenciar tu talento? Escríbenos y respondemos en menos de 24 h.</p>
 
     <form action="https://formsubmit.co/info@wearemoving.com.ar" method="POST">
-      <!-- Opcionales de FormSubmit -->
       <input type="hidden" name="_next" value="https://wearemoving.com.ar/gracias.html">
       <input type="hidden" name="_captcha" value="false">
 
       <div class="field">
         <label for="nombre">Nombre y Apellido*</label>
-        <input type="text" id="nombre" name="Nombre" required />
+        <input type="text" id="nombre" name="Nombre" required>
       </div>
       <div class="field">
         <label for="empresa">Empresa / Cargo</label>
-        <input type="text" id="empresa" name="Empresa-Cargo" />
+        <input type="text" id="empresa" name="Empresa-Cargo">
       </div>
       <div class="field">
         <label for="email">Email corporativo*</label>
-        <input type="email" id="email" name="Email" required />
+        <input type="email" id="email" name="Email" required>
       </div>
       <div class="field">
         <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="Telefono" />
+        <input type="tel" id="telefono" name="Telefono">
       </div>
       <div class="field">
         <label for="mensaje">Mensaje*</label>
